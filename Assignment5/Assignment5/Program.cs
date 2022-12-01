@@ -9,7 +9,7 @@ namespace Assignment5
             Console.WriteLine("Welcome to the Adventure of Assignment 5!");
             
             Character hero = new Character("Bob", RaceCategory.Human, 100);
-            Inventory PlayerInventory PlayerInventory = new Inventory(5);
+            Inventory PlayerInventory = new Inventory(5);
 
             Console.WriteLine("{0} has entered the forest", hero.Name);
 
