@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace Assignment5
 {
     public enum RaceCategory { Elf, Orc, Human }
@@ -12,14 +11,12 @@ namespace Assignment5
         public int Health { get; set; }
         public bool IsAlive { get; set; }
         public int MaxHealth { get; set; }
-
         /// <summary>
         /// Default Constructor
         /// </summary>
         public Character()
         {
         }
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -34,7 +31,6 @@ namespace Assignment5
             Name = name;
             IsAlive = true;
         }
-
         /// <summary>
         /// Reduce the health by the damage specified to character
         /// if the damage taken is more than the health then the IsAlive is set to false.
@@ -42,16 +38,20 @@ namespace Assignment5
         /// <param name="damage">The amount of damage taken</param>
         public void TakeDamage(int damage)
         {
-            Health = 100;
-        }
+            Health = (damage > Health) ? Health = 0 : Health - damage;
 
+            if (Health <= 0)
+                IsAlive = false;
+        }
         /// <summary>
         /// Restore the health of the player by the amount specified up to the max health.
         /// </summary>
         /// <param name="amount">The amount of health to recover</param>
         public void RestoreHealth(int amount)
         {
-            Health = 1;
+            Health = (amount > MaxHealth) ? MaxHealth : Health + amount;
+            if (Health > 0)
+                IsAlive = true;
         }
 
         public override string ToString()

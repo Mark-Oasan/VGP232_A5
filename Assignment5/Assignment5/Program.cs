@@ -27,11 +27,15 @@ namespace Assignment5
             string item = "small health potion";
             int restoreAmount = 10;
 
-            Console.WriteLine("{0} find a {1} and drinks it", hero.Name, item);
+            if(hero.Health > 0)
+            {
+                Console.WriteLine("{0} find a {1} and drinks it", hero.Name, item);
 
-            Console.WriteLine("{0} restores {1} health", hero.Name, restoreAmount);
+                Console.WriteLine("{0} restores {1} health", hero.Name, restoreAmount);
 
-            hero.RestoreHealth(restoreAmount);
+                hero.RestoreHealth(restoreAmount);
+            }
+            
 
             Console.WriteLine(hero);
 
