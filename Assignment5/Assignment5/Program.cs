@@ -4,12 +4,13 @@ namespace Assignment5
 {
     internal class Program
     {
+        public static Inventory PlayerInventory;
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Adventure of Assignment 5!");
             
             Character hero = new Character("Bob", RaceCategory.Human, 100);
-            Inventory PlayerInventory = new Inventory(5);
+            PlayerInventory = new Inventory(5);
 
             Console.WriteLine("{0} has entered the forest", hero.Name);
 
