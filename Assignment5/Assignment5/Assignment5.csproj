@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -12,5 +12,9 @@
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
   </ItemGroup>
+
+  <Target Name="RunTests" DependsOnTargets="Build">
+    <Exec Command="$(ExeLauncher) C:\Users\ohmco\Desktop\NUnit.Console-3.16.0\bin\nunit3-console.exe $(AssemblyName).dll" WorkingDirectory="$(OutputPath)\" />
+  </Target>
 
 </Project>
